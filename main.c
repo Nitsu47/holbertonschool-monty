@@ -5,10 +5,11 @@ int main(int argc, char **argv)
 {
     char *file;
     FILE *fcontent;
+    int n = 0;
 
     if (argc > 1)
         file = argv[1];
     fcontent = fopen(file, "r");
-    fread
-    printf("%c", fcontent[0]);
+    n = fread(fcontent);
+    return(fcontent);
 }
