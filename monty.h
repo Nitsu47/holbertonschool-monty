@@ -4,6 +4,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
+#include <ctype.h>
+#include <stdarg.h>
+#include <errno.h>
+#include <stdbool.h>
 
 
 /**
@@ -32,10 +37,16 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 char *filename(char *del, char *arg);
+void push(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 
 #endif
